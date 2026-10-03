@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #f0f9f4 0%, #ffffff 50%, #fef3c7 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-ayurvedic-500 to-ayurvedic-600 hover:from-ayurvedic-600 hover:to-ayurvedic-700 text-white font-semibold py-3 px-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold py-3 px-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-ayurvedic-200 p-8 hover:shadow-2xl transition-all duration-300;
+  }
+  
+  .input-field {
+    @apply w-full px-6 py-4 border-2 border-ayurvedic-200 rounded-2xl focus:ring-4 focus:ring-ayurvedic-500/20 focus:border-ayurvedic-500 outline-none transition-all duration-200 bg-white/50 backdrop-blur-sm;
+  }
+  
+  .herb-card {
+    @apply bg-gradient-to-br from-ayurvedic-50 to-ayurvedic-100 rounded-2xl p-6 border border-ayurvedic-200 hover:shadow-xl hover:scale-105 transition-all duration-300;
+  }
+  
+  .property-tag {
+    @apply inline-block bg-gradient-to-r from-ayurvedic-200 to-ayurvedic-300 text-ayurvedic-800 text-sm font-medium px-3 py-1.5 rounded-full mr-2 mb-2 shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  .action-tag {
+    @apply inline-block bg-gradient-to-r from-gold-200 to-gold-300 text-gold-800 text-sm font-medium px-3 py-1.5 rounded-full mr-2 mb-2 shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-ayurvedic-600 via-ayurvedic-700 to-gold-600 bg-clip-text text-transparent;
+  }
+  
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20 p-8;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #059669, #047857);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #047857, #065f46);
+}
+
+/* Loading animation */
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-ayurvedic-600;
+}
+
+/* Fade in animation */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pulse animation for interactive elements */
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(5, 150, 105, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(5, 150, 105, 0.6);
+  }
+}
+
+/* Floating animation */
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Gradient background animation */
+.gradient-bg {
+  background: linear-gradient(-45deg, #f0f9f4, #ffffff, #fef3c7, #f0f9f4);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
